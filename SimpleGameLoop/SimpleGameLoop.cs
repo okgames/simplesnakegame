@@ -2,13 +2,6 @@
 {
     public abstract class SimpleGameLoop : IGameLoop
     {
-        public void Run()
-        {
-            while(ShowStartScreen() != 0 && StartGame() != 0)
-            {                
-            }
-            ExitGame();
-        }
 
         /// <summary>
         /// Render the start screen and ask for input from a player.
@@ -26,6 +19,17 @@
         /// Exit the game.
         /// </summary>
         public abstract void ExitGame();
-        
+
+        public void Run()
+        {
+            while (true)
+            {
+                if (ShowStartScreen() == 0)
+                    break;
+                StartGame();
+            }
+            ExitGame();
+        }
+
     }
 }
