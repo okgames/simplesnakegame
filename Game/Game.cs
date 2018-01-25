@@ -20,7 +20,7 @@ namespace SimpleSnakeGame
             var score = 0;
 
             var head = new Pixel(WindowWidth / 2, WindowHeight / 2, ConsoleColor.Red, '☺');
-            var berry = new Pixel(rand.Next(1, WindowWidth - 2), rand.Next(1, WindowHeight - 2), ConsoleColor.Black, '●');
+            var berry = new Pixel(rand.Next(1, WindowWidth - 2), rand.Next(1, WindowHeight - 2), ConsoleColor.DarkMagenta, '☺');
 
             var body = new List<Pixel>();
 
@@ -77,7 +77,7 @@ namespace SimpleSnakeGame
                     ClearPixel(pixel);
                 ClearPixel(head);
 
-                body.Add(new Pixel(head.XPos, head.YPos, ConsoleColor.Green, '●'));
+                body.Add(new Pixel(head.XPos, head.YPos, ConsoleColor.Green, '☺'));
 
                 switch (currentMovement)
                 {
